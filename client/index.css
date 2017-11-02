@@ -1,0 +1,45 @@
+.item-details .property {
+  text-align: center;
+}
+
+#memo-search,
+#memo-masonry {
+  margin-top: 20px;
+}
+
+.memo.high {
+  background-color:#EF9A9A;
+}
+.memo.medium {
+  background-color:#FFF59D;
+}
+.memo.low {
+  background-color: #C5E1A5;
+}
+.memo.done {
+  background-color: #ddd;
+  position: relative;
+}
+
+.memo .actions {
+  margin-top: 20px;
+  padding-top: 20px;
+}
+
+md-progress-linear {
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+md-progress-linear.active {
+  opacity: 1;
+}
+
+md-toast {
+  position: fixed;
+}
+
+#footer {
+  background: #33434b;
+  color: #ddd;
+}

@@ -1,0 +1,9 @@
+<h1 class="md-display-1">Memos</h1>
+
+<md-progress-linear md-mode="indeterminate" ng-class="{active: loading}"></md-progress-linear>
+
+<div id="memo-insert" class="md-whiteframe-1dp" layout-padding ng-include="'app/memos/insert.template.html'"></div>
+
+<div id="memo-search" class="md-whiteframe-1dp" layout-padding ng-include="'app/memos/search.template.html'"></div>
+
+<div id="memo-masonry" layout="row" layout-align="center center" layout-wrap ng-include="'app/memos/masonry.template.html'"></div>

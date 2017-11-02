@@ -1,0 +1,27 @@
+<div layout="row" layout-align="space-around center">
+  <md-radio-group ng-model="search.done">
+    <md-radio-button ng-value="'all'">All</md-radio-button>
+    <md-radio-button ng-value="true">Done</md-radio-button>
+    <md-radio-button ng-value="false">Undone</md-radio-button>
+  </md-radio-group>
+  
+  <md-input-container>
+    <input ng-model="search.title" placeholder="Seach by title...">
+  </md-input-container>
+  
+  <md-input-container flex="25">
+    <label>Sort by</label>
+    <md-select ng-model="order.sort" required>
+      <md-option value="date.due">
+        <span>Due date</span>
+      </md-option>
+      <md-option value="-priority">
+        <span>Priority</span>
+      </md-option>
+      <md-option value="date.creation">
+        <span>Creation date</span>
+      </md-option>
+    </md-select>
+  </md-input-container>
+</div>
+

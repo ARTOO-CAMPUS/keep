@@ -1,0 +1,21 @@
+<form name="addForm" layout="row" layout-align="center center" ng-submit="add(memo, addForm)" autocomplete="off" novalidate>
+  <md-input-container flex="25">
+    <label>Title</label>
+    <input ng-model="memo.title" required>
+  </md-input-container>
+  
+  <md-input-container flex="25">
+    <label>Priority</label>
+    <md-select ng-model="memo.priority" required>
+      <md-option ng-repeat="option in ::priorities" value="{{::option.value}}">
+        <span ng-bind="option.name"></span>
+      </md-option>
+    </md-select>
+  </md-input-container>
+  
+  <md-datepicker flex="25" ng-model="memo.date.due" md-placeholder="Enter due date" md-min-date="minDate" required></md-datepicker>
+  
+  <div flex="25">
+    <md-button type="submit" class="md-primary md-raised" ng-disabled="addForm.$invalid || loading">Add</md-button>
+  </div>
+</form>
