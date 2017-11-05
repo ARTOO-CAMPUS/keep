@@ -7,8 +7,7 @@ var favicon = require('serve-favicon');
 // connect database
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-
-mongoose.connect("mongodb://127.0.0.1:27017/test", {useMongoClient: true}, function (err) {
+mongoose.connect(`${process.env.MONGO_URI}/memos`, { useMongoClient: true }, function (err) {
   if (err) { throw err; }
   console.info('Connection to the database was successfull');
 });
