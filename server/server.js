@@ -4,9 +4,12 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var favicon = require('serve-favicon');
 
+const PORT = process.env.PORT || 3000;
+
 // connect database
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
+process.env.MONGO_URI = 'mongodb://admin:admin@ds243085.mlab.com:43085';
 mongoose.connect(`${process.env.MONGO_URI}/memos`, { useMongoClient: true }, function (err) {
   if (err) { throw err; }
   console.info('Connection to the database was successfull');
@@ -36,6 +39,6 @@ app.get('/*', function (req, res) {
 });
 
 // Start server
-app.listen(3000, function () {
-  console.log('Express server listening on %d', 3000);
+app.listen(PORT, function () {
+  console.log('Express server listening on %d', PORT);
 });
