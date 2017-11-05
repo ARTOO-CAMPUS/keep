@@ -1,12 +1,16 @@
 <div flex="25" flex-md="33" flex-sm="50" flex-xs="100" layout="column" ng-repeat="memo in memos | done:search | filter:search.title | orderBy:order.sort">
   <div layout-margin layout-padding class="md-whiteframe-1dp memo" ng-class="{high: memo.priority === 2, medium: memo.priority === 1, low: memo.priority === 0, done: memo.done}">
     <h4 ng-bind="memo.title"></h4>
-    
+
     <div layout="row" layout-align="space-between">
-      <div>Created at: <span ng-bind="::memo.date.creation | date:dateFormat"></span></div>
-      <div>Due date: <span ng-bind="::memo.date.due | date:dateFormat"></span></div>
+      <div>Created at:
+        <span ng-bind="::memo.date.creation | date:dateFormat"></span>
+      </div>
+      <div>Due date:
+        <span ng-bind="::memo.date.due | date:dateFormat"></span>
+      </div>
     </div>
-    
+
     <div class="actions" layout="row" layout-align="space-around">
       <md-button class="md-raised" ng-click="done(memo)" ng-class="{'md-primary': memo.done}">{{memo.done ? 'Undone' : 'Done'}}</md-button>
       <md-button class="md-raised md-warn" ng-click="remove(memo)">Remove</md-button>
